@@ -10,7 +10,7 @@
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(40, 42, 52);
     margin: 0;
     padding: 0;
     display: flex;
@@ -20,7 +20,7 @@ body {
 .instagram-wrapper {
     display: flex; /*O display flex deixará os objetos os quais um estaria em cima do outro de lados, o que ficaria em cima fica na esquerda, o de baixo, na direita. Ele sempre agrupará tudo horizontalmente ocupando todo espaço que conseguir*/
     align-items: center; /*Esse faz o alinhamento vertical dos nossos itens, ou seja, na vertical eles ficarão centralizados*/
-    justify-content: start; /*Semelhante ao align-items mas deixa centralizado no eixo x, ou seja, na horizontal. O space-evenly dividirá de forma igual o espaço, tanto dos lados quanto do topo e fundo. O space-around fará a mesma coisa mas deixará o espaço maior no meio do que aos redores. O space-between coloca quanda elemento no canto e separa eles. O start é o espaço iniciado da esquerda para a direita*/
+    justify-content: center; /*Semelhante ao align-items mas deixa centralizado no eixo x, ou seja, na horizontal. O space-evenly dividirá de forma igual o espaço, tanto dos lados quanto do topo e fundo. O space-around fará a mesma coisa mas deixará o espaço maior no meio do que aos redores. O space-between coloca quanda elemento no canto e separa eles. O start é o espaço iniciado da esquerda para a direita*/
     width: 60%;
     height: 100vh;
 }
@@ -43,6 +43,9 @@ body {
     flex-direction: column; /*Com isso, mudamos a direção para coluna, assim nosso justify-content fica vertical e o align-items horizontal*/
     width: 50%;
     min-height: 34rem;
+    background: #3C3F51;
+    border: 1px solid lightgray;
+    border-radius: 3px;
 }
 
 .group {
@@ -50,18 +53,28 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column; /*Justify na vertical e align na horizontal*/
-    background-color: #ffffff;
     width: 100%;
     padding: 1.3rem 0; /*1.3 de rem na parte superior e inferior e zero nas laterais*/
-    border: 1px solid lightgray;
     margin: 6px;
 }
 
 .group:nth-child(1) { /*Um seletor do css que pega os filhos do elemento, ou seja, a primeira parte dentro da div mãe, nesse caso*/
     min-height: 19rem;
 }
+
 .instagram-logo {
-    height: 6rem;
+    transition: all 2s ease-in-out;
+    font-family: 'Grand Hotel', cursive;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.instagram-logo:hover {
+    background: -webkit-linear-gradient(159deg, rgba(19,186,199,1) 0%, rgba(38,205,244,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .profile-photo {
@@ -77,15 +90,22 @@ body {
 }
 
 .instagram-login {
-    background-color: #0095f6;
-    color: #ffff;
+    background: rgb(19,186,199);
+    background: linear-gradient(159deg, rgba(19,186,199,1) 0%, rgba(38,205,244,1) 100%);
     padding: 8px;
     border-radius: 4px;
     margin-top: 20px;
+    color: #f8f8f8;
+}
+
+.instagram-login:hover{
+    box-shadow: 2px 1px 10px rgb(19,186,199);
+    transform: scale(1.1);
+    transition: all 0.2s ease-out;
 }
 
 .instagram-logout {
-    color: #0095f6;
+    color: rgba(38,205,244,1);
     margin-top: 1rem;
 }
 
@@ -97,56 +117,49 @@ body {
     color: #0095f6;
 }
 
+.link-blue a{
+    color:  rgba(38,205,244,1);
+}
+
+.link-blue a:hover{
+    text-decoration: underline;
+}
+
 .finish {
     display: column;
     position:absolute;
-    bottom: 4px;
+    bottom: 20px;
+    color: rgb(160, 160, 160);
 }
 
-/*.get-the-app {
-    display: flex;
-    /*flex-direction: column;*/
-/*    align-items: center;
-    justify-content: center;
-    width: 100%;
-    /*padding: 1.3rem 0;*/
-/*}*/
+.finish p a{
+    text-decoration: underline;
+    color: #fff;
+}
+
 .get-app {
     margin: 20px 20px 0 20px;
     text-align: center;
     justify-content: center;
+    color: rgb(160, 160, 160);
 }
 
 .get-app-images {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 1rem;
 }
 
-.download1 {
-    display: flex;
-    width: 100%;
-    /*justify-content: space-evenly; /*Ficará exatamente no centro*/
-    align-items: center;
-    padding: 1rem;
+.icon-download{
+    height: 3.5rem;
+    filter: brightness(0) invert(1);
 }
 
 .app-download {
     height: 6rem;
     width: 14rem;
     background-size: cover;
-}
-
-.app-download-ios {
-    /*background-image: url(./img/apple-button.png);*/
-    max-width: 190px;
-    height: auto;
-}
-
-.app-download-android {
-    /*background-image: url(./img/googleplay-button2.png);*/
-    max-width: 200px;
-    height: auto;
 }
 
 /*Daqui para baixo, vamos deixar ela responsiva*/
